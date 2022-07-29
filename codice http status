@@ -1,4 +1,4 @@
-                                                                                                 httpstatus.py
+                                                                                                  httpstatus.py
 import http.client
 
 host = input("Inserire host/IP del sistema target: ")
@@ -12,6 +12,7 @@ try:
     connection = http.client.HTTPConnection(host, port)
     connection.request('OPTIONS', 'http://192.168.50.101/phpMyAdmin/phpMyAdmin.html%27)
     response=connection.getresponse()
+    print("I metodi abilitati sono:")
     print(response.getheader('allow'))
     connection.close()
 
